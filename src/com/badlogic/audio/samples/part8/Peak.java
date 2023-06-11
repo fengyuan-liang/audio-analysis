@@ -2,12 +2,10 @@ package com.badlogic.audio.samples.part8;
 
 import com.badlogic.audio.analysis.FFT;
 import com.badlogic.audio.io.MP3Decoder;
-import com.badlogic.audio.io.WaveDecoder;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * <p>
