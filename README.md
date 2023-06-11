@@ -12,13 +12,13 @@
 >
 >那么需要以0.5s为区间计算均值，需要的窗口数约为22个。这里取前10个窗口+后10个窗口计算均值。
 
-我们可以分析出音乐的节拍（<a hrep="https://github.com/fengyuan-liang/audio-analysis/blob/master/src/com/badlogic/audio/samples/part8/PeakDetection.java">代码看这里</a>）
+我们可以分析出音乐的节拍（[代码看这里](https://github.com/fengyuan-liang/audio-analysis/blob/master/src/com/badlogic/audio/samples/part8/PeakDetection.java)）
 
 ![image-20230611204836652](https://cdn.fengxianhub.top/resources-master/202306112048957.png)
 
 高的位置就是节拍（Peak Detection）所在了
 
-如果想知道节拍的卡点时间（<a hrep="https://github.com/fengyuan-liang/audio-analysis/blob/master/src/com/badlogic/audio/samples/part8/Peak.java">代码看这里</a>），我们可以这样计算
+如果想知道节拍的卡点时间（[代码看这里](https://github.com/fengyuan-liang/audio-analysis/blob/master/src/com/badlogic/audio/samples/part8/Peak.java)），我们可以这样计算
 
 ```java
 for (int i = 0; i < spectralFlux.size(); i++) {
