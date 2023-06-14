@@ -11,6 +11,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * <p>
@@ -20,14 +21,18 @@ import java.util.List;
  * @author 梁峰源 <fengyuan-liang@foxmail.com>
  * @since 2023/6/11 18:34
  */
-public class Peak {
-//    public static final String FILE_PATH = "samples/Tales of Dragonia - BrunuhVille.mp3";
-    public static final String FILE_PATH = "/Users/fengyuan-liang/Desktop/The Kid LAROI,Justin Bieber - Stay MP3.mp3";
+public class PeakFromScanner {
 
     public static final int THRESHOLD_WINDOW_SIZE = 20;
     public static final float MULTIPLIER = 1.5f;
 
     public static void main(String[] args) {
+        System.out.println("请输入音乐文件路径，暂只支持mp3格式");
+        String FILE_PATH = new Scanner(System.in).nextLine();
+        if (!FILE_PATH.contains(".mp3")) {
+            System.err.println("文件格式异常，只支持mp3格式");
+            System.exit(1);
+        }
         Instant s = Instant.now();
         try {
             MP3Decoder decoder = new MP3Decoder(new FileInputStream(FILE_PATH));
