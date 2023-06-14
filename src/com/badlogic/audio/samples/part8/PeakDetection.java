@@ -1,6 +1,7 @@
 package com.badlogic.audio.samples.part8;
 
 import com.badlogic.audio.analysis.FFT;
+import com.badlogic.audio.analysis.FourierTransform;
 import com.badlogic.audio.io.MP3Decoder;
 import com.badlogic.audio.visualization.PlaybackVisualizer;
 import com.badlogic.audio.visualization.Plot;
@@ -20,14 +21,16 @@ import java.util.List;
  */
 public class PeakDetection {
 //    public static final String FILE = "samples/explosivo.mp3";
-    public static final String FILE = "samples/Tales of Dragonia - BrunuhVille.mp3";
+//    public static final String FILE = "samples/Tales of Dragonia - BrunuhVille.mp3";
+    public static final String FILE = "samples/hitme.mp3";
+
     public static final int THRESHOLD_WINDOW_SIZE = 20;
     public static final float MULTIPLIER = 1.5f;
 
     public static void main(String[] argv) throws Exception {
         MP3Decoder decoder = new MP3Decoder(new FileInputStream(FILE));
         FFT fft = new FFT(1024, 44100);
-        fft.window(FFT.HAMMING);
+        fft.window(FourierTransform.HAMMING);
         float[] samples = new float[1024];
         float[] spectrum = new float[1024 / 2 + 1];
         float[] lastSpectrum = new float[1024 / 2 + 1];
