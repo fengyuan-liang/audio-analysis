@@ -13,7 +13,21 @@ Beat timestamps:
 耗时：1s
 ```
 
+如果您使用的是mac，下载[mac_intel-audio-analysis](https://github.com/fengyuan-liang/audio-analysis/releases/download/v0.0.2/mac_intel-audio-analysis)
 
+>第一步：先添加文件可执行权限
+
+```shell
+$ ls
+mac_intel-audio-analysis
+$ chmod +x mac_intel-audio-analysis
+```
+
+>第二步，在图形化界面打开（命令行会提示未验证开发者，需要在图形化界面打开一次，之后即可在命令行使用）
+
+![image-20230615095905990](https://cdn.fengxianhub.top/resources-master/image-20230615095905990.png)
+
+后续在命令行即可正常使用
 
 ## 1. 节拍检测（Peak Detection）
 
